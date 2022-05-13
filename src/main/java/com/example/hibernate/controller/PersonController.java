@@ -3,7 +3,6 @@ package com.example.hibernate.controller;
 import com.example.hibernate.model.Person;
 import com.example.hibernate.repository.PersonJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +23,7 @@ public class PersonController {
 
     @GetMapping("/persons/by-age")
     public String getPersonsByAge(int age) {
-        return personJpaRepository.findAllByPersonKeyAgeLessThan(age, Sort.by("personKeyAge")).toString();
+        return personJpaRepository.findAllByPersonKeyAgeLessThanOrderBy(age).toString();
     }
 
     @GetMapping("/persons/by-name-and-surname")
