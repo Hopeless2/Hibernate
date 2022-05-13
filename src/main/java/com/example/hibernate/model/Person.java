@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Person")
+@Table(name = "person")
 public class Person {
     @EmbeddedId
     PersonKey personKey;
